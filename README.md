@@ -1,20 +1,18 @@
 # 🐍 The Python Nexus: Apprentice Journey
 
-This is a step-by-step guide to mastering Python, starting from absolute zero. We begin with basic commands and move toward complex robotics and aerospace systems only once the foundation is unbreakable.
+Welcome to the beginning of your engineering career. This repository is organized into small, digestible lessons. Master one, move to the next.
 
-## 📂 The Apprentice Roadmap
-
-| Stage | Folder | Focus |
+## 📂 Phase 1: The Foundations
+| File | Topic | Mission |
 | :--- | :--- | :--- |
-| **1** | `/01-Foundations` | **Printing**, Math, Variables, and Logic. |
-| **2** | `/02-Control-Flow` | Loops and making decisions. |
-| **3** | `/03-Functions` | Organizing code into reusable tools. |
-| **4** | `/04-Data` | Handling lists of information. |
+| `01-Hello-World.md` | Printing | Make the computer speak. |
+| `02-The-Comment.md` | Documentation | Writing notes for humans. |
+| `03-Variable-Basics.md` | Storing Data | Creating your first data containers. |
+| `04-Numbers-And-Math.md` | Arithmetic | Basic calculations for robot movement. |
+| `05-The-Input.md` | User Interaction | Making the program ask you questions. |
 
-## 🛠️ How to use this Repo
-1. Read the `.md` file in each folder.
-2. Complete the "Quest" at the bottom in a real `.py` file.
-3. Use the `scripts/` folder (later) to turn these into a PDF handbook.
+## 🛠️ The PDF Plan
+Once you complete this folder, you will find a script in `/scripts` that packages these files into your first "Python Apprentice Manual."
 
 ---
-*One line of code at a time.*
+*Status: System Initialized.*
