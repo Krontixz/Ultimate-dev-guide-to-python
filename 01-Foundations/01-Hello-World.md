@@ -1,51 +1,38 @@
-# 📢 Lesson 1: The First Command (Print)
+# 📢 Lesson 1: The Hello World
 
-The journey to NASA starts with a single line of code. Before a robot can navigate Mars, it has to be able to tell you what it is doing.
+Every great programmer started here. The `print()` function is how we get information out of the computer and onto the screen.
 
 ## 1. The 5-Year-Old Spark ⚡
-Imagine you have a magic parrot. Whatever you write on a piece of paper and show to the parrot, it screams out loud. The `print()` command is that parrot. It takes whatever is inside the parentheses and shows it on your screen.
+Imagine the computer is a big, silent room. `print()` is the megaphone. Without it, the computer might be doing a lot of work inside, but you'll never hear the results!
 
 ## 2. The Deep Dive 🤿
-When you run `print("Hello")`, several things happen:
-1. The **Python Interpreter** reads the line.
-2. It recognizes `print` as a built-in function (a pre-written tool).
-3. It sends the text `"Hello"` to the **Standard Output** (usually your terminal or console window).
-
-In Python, text is called a **String** and must be wrapped in quotation marks (`"` or `'`). If you forget them, Python thinks you are talking about a variable and will get confused!
+In Python, we use **Functions**. A function is a command followed by parentheses `()`. 
+Inside those parentheses, we put what we want to print. 
+If we want to print text, we must wrap it in **Quotes** `"like this"`. This tells Python: "This is just text, don't try to run it as code."
 
 ## 3. The Side-by-Side Mirror 🪞
-Python is famous for being "Human-Readable." Look at how much work it takes just to say "Hello" in other languages:
+Python is designed to be clean.
 
-### Python
+**Python:**
 ```python
 print("Hello World")
 ```
 
-### Java
-```java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
-    }
+**C++ (What NASA often uses for hardware):**
+```cpp
+#include <iostream>
+int main() {
+    std::cout << "Hello World";
+    return 0;
 }
 ```
-
-Python removes the "clutter" so you can focus on the logic.
+*Notice how many extra lines C++ needs? Python lets us focus on the logic immediately.*
 
 ## 4. The Quest: System Check ⚔️
-
-Create a file named `hello_nexus.py` and write code to do the following:
-
-1.  Use `print()` to display the message: `System Booting...`
-2.  Use `print()` to display the message: `Navigation: Online`
-3.  Use `print()` to display the message: `Hello, I am [Your Name]'s Robot!`
-
-**Example Output:**
-```text
-System Booting...
-Navigation: Online
-Hello, I am Alex's Robot!
-```
+Create a file named `01_print_task.py`. Use the `print()` command to display three separate lines:
+1. Your favorite robot's name.
+2. The year you want to finish this course.
+3. The phrase: "Engines are at 100% capacity."
 
 ---
-*Next Lesson: 02-Variable-Alchemy.md*
+*Next Lesson: 02-The-Comment.md*
