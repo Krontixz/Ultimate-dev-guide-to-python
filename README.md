@@ -2,17 +2,20 @@
 
 Welcome to the beginning of your engineering career. This repository is organized into small, digestible lessons. Master one, move to the next.
 
-## 📂 Phase 1: The Foundations
-| File | Topic | Mission |
+## 📂 The Journey Map
+
+| Phase | Folder | Focus |
 | :--- | :--- | :--- |
-| `01-Hello-World.md` | Printing | Make the computer speak. |
-| `02-The-Comment.md` | Documentation | Writing notes for humans. |
-| `03-Variable-Basics.md` | Storing Data | Creating your first data containers. |
-| `04-Numbers-And-Math.md` | Arithmetic | Basic calculations for robot movement. |
-| `05-The-Input.md` | User Interaction | Making the program ask you questions. |
+| **1** | `/01-Foundations` | Printing, Comments, Variables, and Math. |
+| **2** | `/02-Control-Flow` | If-statements, While loops, and For loops. |
+| **3** | `/03-Data-Structures` | Lists, Tuples, and Dictionaries. |
+| **4** | `/04-Functions` | Reusable code, Arguments, and Return values. |
+| **5** | `/05-OOP` | Classes, Objects, and Inheritance. |
+| **6** | `/06-Safety-Net` | Error Handling and Modules. |
+| **7** | `/07-VEX-IQ-Robotics` | VEX IQ Hardware, Motors, and Drivetrains. |
 
 ## 🛠️ The PDF Plan
-Once you complete this folder, you will find a script in `/scripts` that packages these files into your first "Python Apprentice Manual."
+Once you complete this journey, you will find a script in `/scripts` that packages these files into your professional "Python Apprentice Manual."
 
 ---
-*Status: System Initialized.*
+*Status: All Systems Operational. Ready for Hardware Interface.*
