@@ -1,5 +1,6 @@
 import os
 from weasyprint import HTML
+import markdown  # You'll need to install: pip install markdown
 
 def compile_markdown_to_pdf():
     # 1. Configuration
@@ -25,8 +26,7 @@ def compile_markdown_to_pdf():
     # Sort files alphabetically so the guide stays in order
     md_files.sort()
 
-    # 3. Start building the HTML that will become the PDF
-    # We use CSS to make it look professional (Cover page, headers, code blocks)
+    # 3. Start building the HTML
     html_body = """
     <html>
     <head>
@@ -36,18 +36,43 @@ def compile_markdown_to_pdf():
             margin: 20mm;
             @bottom-right { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; }
         }
-        body { font-family: sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 100%; }
         .cover { height: 100vh; text-align: center; padding-top: 80mm; page-break-after: always; }
         .cover h1 { font-size: 32pt; color: #2c3e50; }
-        .section-header { 
-            background: #2c3e50; color: white; padding: 10px; 
-            margin-top: 30px; border-radius: 5px; page-break-before: always;
+        .file-section { 
+            margin-bottom: 40px; 
+            page-break-before: always;
         }
-        .path { font-family: monospace; color: #2980b9; font-size: 10pt; margin-bottom: 20px; display: block; }
+        .file-header { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 10px; 
+            margin-top: 30px; 
+            border-radius: 5px;
+        }
+        .path { 
+            font-family: monospace; 
+            color: #2980b9; 
+            font-size: 10pt; 
+            margin: 10px 0 20px 0; 
+            display: block; 
+        }
         pre { 
-            background: #f4f4f4; border: 1px solid #ddd; padding: 15px; 
-            border-radius: 5px; white-space: pre-wrap; font-size: 10pt; 
+            background: #f4f4f4; 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            border-radius: 5px; 
+            overflow-x: auto;
+            font-size: 10pt; 
         }
+        code { 
+            font-family: monospace;
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        h1, h2, h3, h4 { color: #2c3e50; }
+        img { max-width: 100%; }
     </style>
     </head>
     <body>
@@ -57,19 +82,26 @@ def compile_markdown_to_pdf():
         </div>
     """
 
-    # 4. Read the contents of every file found and add it to the PDF
+    # 4. Convert each markdown file to HTML and add it
     print(f"🔍 Scanning repository...")
     for filepath in md_files:
         print(f"📄 Adding: {filepath}")
         with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
-            
-        # Add the file content to our master HTML string
+            md_content = f.read()
+        
+        # Convert markdown to HTML
+        html_content = markdown.markdown(md_content, extensions=['extra', 'codehilite'])
+        
+        # Add the converted content to our master HTML
         html_body += f"""
-        <div class="file-content">
-            <div class="section-header">{os.path.basename(filepath)}</div>
-            <span class="path">Location: {filepath}</span>
-            <pre>{content}</pre>
+        <div class="file-section">
+            <div class="file-header">
+                <h2>{os.path.basename(filepath)}</h2>
+            </div>
+            <div class="path">📍 Location: {filepath}</div>
+            <div class="markdown-content">
+                {html_content}
+            </div>
         </div>
         """
 
